@@ -1,4 +1,4 @@
-import { Banner, NavBar } from './components';
+import { Banner, NavBar, Skills } from './components';
 
 
 export const Portafolio = () => {
@@ -7,6 +7,7 @@ export const Portafolio = () => {
     
       <NavBar />
       <Banner />
+      <Skills />
     
     </>
   )
