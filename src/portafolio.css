@@ -1,0 +1,73 @@
+/* Stilos propios */
+*{
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+
+/* Variables */
+:root{
+    --bg-primario: #06A8D1;
+    --bg-secundario: #2F2D2E;
+    --text-primario: #fff;
+    --text-secundario: #000;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+
+body{
+    background: var(--bg-secundario);
+    color: var(--text-primario);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Etiqutas */
+a{
+    text-decoration: none;
+    color: var(--text-primario);
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+section{
+  min-height: 100vh;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px){
+    html{
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 576px){
+    html{
+        font-size: 40%;
+    }
+}
+
+@media (max-width: 320px){
+    html{
+        font-size: 30%;
+    }
+}

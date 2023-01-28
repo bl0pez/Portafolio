@@ -1,3 +1,2 @@
-export * from './banner/Banner';
-export * from './navbar/NavBar';
-export * from './skills/Skills';
+export * from './header/Header';
+export * from './inicio/Inicio';

@@ -1,14 +1,13 @@
-import { Banner, NavBar, Skills } from './components';
-
+import {  Header, Inicio } from './components/';
+import { Habilidades } from './components/hablilidades/Habilidades';
+import './portafolio.css';
 
 export const Portafolio = () => {
   return (
     <>
-    
-      <NavBar />
-      <Banner />
-      <Skills />
-    
+    <Header />
+    <Inicio />
+    <Habilidades />
     </>
   )
 }

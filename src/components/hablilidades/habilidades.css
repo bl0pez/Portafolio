@@ -1,0 +1,37 @@
+.habilidades{
+    background: var(--bg-primario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.habilidades__container{
+    width: 100%;
+    text-align: center;
+}
+
+.habilidades__grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    text-align: center;
+}
+
+.habilidades__item{
+    background: var(--bg-secundario);
+    padding: 3rem 1rem;
+}
+
+.section__title{
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
+.habilidades__item i{
+    font-size: 7rem;
+}
+
+.habilidades__name{
+    font-size: 2rem;
+    margin-top: 1rem;
+}

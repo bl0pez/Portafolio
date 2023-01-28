@@ -7,6 +7,7 @@ import navIcon1 from './nav-icon1.svg';
 import navIcon2 from './nav-icon2.svg';
 import navIcon3 from './nav-icon3.svg';
 import colorSharp from './color-sharp.png';
+import colorSharp2 from './color-sharp2.png';
 
 export {
     headerImage,
@@ -18,4 +19,5 @@ export {
     navIcon2,
     navIcon3,
     colorSharp,
+    colorSharp2
 }
