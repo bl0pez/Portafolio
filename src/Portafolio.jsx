@@ -1,4 +1,4 @@
-import {  Header, Inicio } from './components/';
+import {  Header, Inicio, Proyectos } from './components/';
 import { Habilidades } from './components/hablilidades/Habilidades';
 import './portafolio.css';
 
@@ -8,6 +8,7 @@ export const Portafolio = () => {
     <Header />
     <Inicio />
     <Habilidades />
+    <Proyectos />
     </>
   )
 }
