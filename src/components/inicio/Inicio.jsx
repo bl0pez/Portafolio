@@ -4,7 +4,7 @@ import './inicio.css'
 
 export const Inicio = () => {
     return (
-        <section className="container section-hero" >
+        <section className="container section-hero" id='inicio'>
 
             <div className="section__hero-text">
                 <h2>Hola, soy

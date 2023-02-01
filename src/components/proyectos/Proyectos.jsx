@@ -1,49 +1,46 @@
-import './proyectos.css';
 import { fechApi } from '../../hooks/fechApi';
 import { useEffect } from 'react';
+import { CardProyect } from './CardProyect';
+import './proyectos.css';
 
 export const Proyectos = () => {
 
-    const { getApi, data } = fechApi();
+    const { filteredData,
+        setFilter,
+        loading } = fechApi('http://localhost:4000/api/github');
 
-    useEffect(() => {
-        getApi();
-    }, []);
+        console.log(filteredData);
+
+    if (loading) {
+        return (
+            <section>
+                <h1>Cargando...</h1>
+            </section>
+        )
+    }
 
     return (
-        <section className="proyectos">
+        <section className="proyectos" id='proyectos'>
             <div className="container proyectos__container">
                 <h2 className="section__title">Proyectos</h2>
+                <div className="proyecto__filter">
+                    <button
+                        onClick={() => setFilter('all')}
+                        className={`proyecto__filter-btn`}
+                    >Todos</button>
+                    <button
+                        onClick={() => setFilter('frontend')}
+                        className={`proyecto__filter-btn`}
+                    >Frontend</button>
+                    <button
+                        onClick={() => setFilter('backend')}
+                        className={`proyecto__filter-btn`}
+                    >Backend</button>
+                </div>
                 <div className="proyectos__grid">
                     {
-                        data.frontend?.map((proyecto) => (
-                            <div className="proyectos__item">
-                                <div className="proyectos__img">
-                                    <img src={proyecto.image} alt="proyecto" className="proyectos__img" />
-                                </div>
-                                <div className="proyectos__info">
-                                    <h3 className="proyectos__subtitle">{proyecto.name}</h3>
-                                    <p className="proyectos__description">{proyecto.description}</p>
-                                    <div className="proyectos__tags">
-                                        {
-                                            proyecto.topics.map((topic) => (
-                                                <span className="proyectos__tag">{topic}</span>
-                                            ))
-                                        }
-                                    </div>
-                                    <div className="proyectos__links">
-                                        {/* abrir en otro navegaro */}
-                                        <a href={proyecto.image} target='_blank' rel='noreferrer' title='Ver imagen'>
-                                            <i class="fas fa-image"></i>
-                                        </a>
-                                        <a href={proyecto.homepage} target='_blank' rel='noreferrer' title='Ver Proyecto'>
-                                            <i class="fas fa-link"></i>
-                                        </a>
-                                        <a href=""><i class="fab fa-github"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
+                        filteredData.map((proyecto) => (
+                            <CardProyect key={proyecto._id.toString()} {...proyecto} />
                         ))
                     }
                 </div>

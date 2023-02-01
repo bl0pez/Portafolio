@@ -1,27 +1,34 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const url = 'http://localhost:4000/api/github';
 
-export const fechApi = () => {
- 
+export const fechApi = (apiUrl, defaultFilter = 'all') => {
+
     const [data, setData] = useState([]);
+    const [filter, setFilter] = useState(defaultFilter);
     const [loading, setLoading] = useState(true);
 
-    const getApi = async() => {
-        const resp = await fetch(url);
-        const data = await resp.json();
+    useEffect(() => {
+        fetch(`${apiUrl}`)
+            .then((res) => res.json())
+            .then(({data}) => {
+                setData(data);
+                setLoading(false);
+            })
+    }, [apiUrl])
 
-        setData(data);
-        setLoading(false);
-    }
+    const filteredData = data.filter((item) => {
+        if (filter === 'all') {
+            return true;
+        }
+        return item.topics.includes(filter);
+    });
 
 
-    return{
-        //Propiedades
-        data,
-        loading,
-        //Métodos
-        getApi
+    return {
+        filteredData,
+        setFilter,
+        loading
     }
 
 }

@@ -1,5 +1,5 @@
 .header{
-    position: relative;
+    position: fixed;
     width: 100vw;
     border-bottom: 1px solid var(--bg-primario);
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 .nav__logo{
@@ -26,7 +27,9 @@
     color: var(--text-primario);
     font-size: 1.7rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
+    padding: 10px 2rem;
+    display: block;
 }
 
 .nav__item{
@@ -44,6 +47,12 @@
     padding: 0.05rem;
     color: var(--text-primario);
     display: none;
+}
+
+.linkActive,
+.nav__link:hover{
+    background: var(--bg-primario);
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 768px){
@@ -69,11 +78,6 @@
         padding: 1rem;
         text-align: center;
     }
-
-    .nav__item:hover{
-        background: var(--bg-primario);
-    }
-
 
     .nav__toggle{
         display: block;
