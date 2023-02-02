@@ -19,12 +19,12 @@ export const CardProyect = ({ name, description, topics, image, homepage, html_u
                 <div className="proyectos__links">
                     {/* abrir en otro navegaro */}
                     <a href={image} target='_blank' rel='noreferrer' title='Ver imagen'>
-                        <i class="fas fa-image"></i>
+                        <i className="fas fa-image"></i>
                     </a>
                     <a href={homepage} target='_blank' rel='noreferrer' title='Ver Proyecto'>
-                        <i class="fas fa-link"></i>
+                        <i className="fas fa-link"></i>
                     </a>
-                    <a href={html_url} target='_blank' rel='noreferrer' title='Ver Repositorio'><i class="fab fa-github"></i></a>
+                    <a href={html_url} target='_blank' rel='noreferrer' title='Ver Repositorio'><i className="fab fa-github"></i></a>
                 </div>
 
             </div>

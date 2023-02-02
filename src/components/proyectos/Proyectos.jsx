@@ -1,26 +1,27 @@
 import { fechApi } from '../../hooks/fechApi';
-import { useEffect } from 'react';
 import { CardProyect } from './CardProyect';
 import './proyectos.css';
+import { useContext } from 'react';
+import { ScrollContext } from '../../context/ScrollContext';
 
 export const Proyectos = () => {
+    const { proyectosRef } = useContext(ScrollContext);
 
     const { filteredData,
         setFilter,
         loading } = fechApi('http://localhost:4000/api/github');
 
-        console.log(filteredData);
 
     if (loading) {
         return (
-            <section>
+            <section ref={ proyectosRef } id="proyectos" className={`proyectos hidden`}>
                 <h1>Cargando...</h1>
             </section>
         )
     }
 
     return (
-        <section className="proyectos" id='proyectos'>
+        <section className="proyectos hidden" id='proyectos' ref={proyectosRef}>
             <div className="container proyectos__container">
                 <h2 className="section__title">Proyectos</h2>
                 <div className="proyecto__filter">

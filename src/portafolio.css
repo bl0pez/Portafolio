@@ -60,6 +60,20 @@ section{
     margin-bottom: 2rem;
 }
 
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100px);
+    transition: all 0.5s ease;
+}
+
+.showAnimation{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0px);
+}
+
 @media (max-width: 768px){
     html{
         font-size: 50%;

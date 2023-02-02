@@ -1,10 +1,13 @@
-import ola from '../../assets/img/hero/ola.svg'
 import hero from '../../assets/img/hero/hero.svg'
 import './inicio.css'
+import { useContext } from 'react';
+import { ScrollContext } from '../../context/ScrollContext';
 
 export const Inicio = () => {
+    const { inicioRef } = useContext(ScrollContext);
+
     return (
-        <section className="container section-hero" id='inicio'>
+        <section className="container section-hero hidden" id='inicio' ref={inicioRef}>
 
             <div className="section__hero-text">
                 <h2>Hola, soy
@@ -14,15 +17,15 @@ export const Inicio = () => {
                     Desarrollador web
                 </h3>
 
-                <div class="section__hero-text--redes">
+                <div className="section__hero-text--redes">
                     <a>
-                        <i class="fab fa-github"></i>
+                        <i className="fab fa-github"></i>
                     </a>
                     <a>
-                        <i class="fab fa-linkedin"></i>
+                        <i className="fab fa-linkedin"></i>
                     </a>
                     <a>
-                        <i class="fab fa-tiktok"></i>
+                        <i className="fab fa-tiktok"></i>
                     </a>
                 </div>
             </div>
