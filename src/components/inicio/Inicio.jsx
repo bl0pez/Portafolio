@@ -7,7 +7,7 @@ export const Inicio = () => {
     const { inicioRef } = useContext(ScrollContext);
 
     return (
-        <section className="container section-hero hidden" id='inicio' ref={inicioRef}>
+        <section className="container section-hero hidden section" id='inicio' ref={inicioRef}>
 
             <div className="section__hero-text">
                 <h2>Hola, soy

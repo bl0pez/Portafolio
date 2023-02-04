@@ -7,21 +7,19 @@ import { ScrollContext } from '../../context/ScrollContext';
 export const Proyectos = () => {
     const { proyectosRef } = useContext(ScrollContext);
 
-    const { filteredData,
-        setFilter,
-        loading } = fechApi('http://localhost:4000/api/github');
+    const { filteredData, setFilter, loading } = fechApi(`${import.meta.env.VITE_URL_BACKEND}/portafolio`);
 
 
     if (loading) {
         return (
-            <section ref={ proyectosRef } id="proyectos" className={`proyectos hidden`}>
+            <section ref={ proyectosRef } id="proyectos" className={`proyectos hidden section`}>
                 <h1>Cargando...</h1>
             </section>
         )
     }
 
     return (
-        <section className="proyectos hidden" id='proyectos' ref={proyectosRef}>
+        <section className="proyectos hidden section" id='proyectos' ref={proyectosRef}>
             <div className="container proyectos__container">
                 <h2 className="section__title">Proyectos</h2>
                 <div className="proyecto__filter">

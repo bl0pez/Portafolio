@@ -1,62 +1,59 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useOnScreen } from '../hooks/useOnScreen';
 import { ScrollContext } from './ScrollContext'
 
 export const ScrollProvider = ({ children }) => {
 
-    const inicioRef = useRef();
-    const habilidadesRef = useRef();
-    const proyectosRef = useRef();
-    const contactoRef = useRef();
+    const inicioRef = useRef(null);
+    const habilidadesRef = useRef(null);
+    const proyectosRef = useRef(null);
+    const contactoRef = useRef(null);
 
-    const [activeLink, setActiveLink] = useState('inicio');
-
-    useOnScreen(inicioRef, { rootMargin: '0px 0px -50% 0px' }, setActiveLink);
-    useOnScreen(habilidadesRef, { rootMargin: '0px 0px -50% 0px' }, setActiveLink);
-    useOnScreen(proyectosRef, { rootMargin: '0px 0px -50% 0px' }, setActiveLink);
-    //useOnScreen(contactoRef, { rootMargin: '0px 0px -50% 0px' });
+    useOnScreen(inicioRef, { rootMargin: '0px 0px -50% 0px' });
+    useOnScreen(habilidadesRef, { rootMargin: '0px 0px -50% 0px' });
+    useOnScreen(proyectosRef, { rootMargin: '0px 0px -50% 0px' });
+    useOnScreen(contactoRef, { rootMargin: '0px 0px -50% 0px' });
 
 
-    const onSelectLink = useMemo(() => {
-        return (section) => {
-            setActiveLink(section);
-            window.location.hash = section;
-        };
-    }, [activeLink]);
+    //Controla el scroll y activa el link correspondiente
+    const activeSection = () => {
+        let section = document.querySelectorAll('.section');
+        const linkItems = document.querySelectorAll('.nav_item');
 
-    const handleScroll = useMemo(() => {
-        return () => {
-            //Creamos un array con los refs
-            const refs = [inicioRef, habilidadesRef, proyectosRef, contactoRef];
+        window.onscroll = () => {
+            section.forEach((seccion) => {
+                let top = window.scrollY;
+                let offset = seccion.offsetTop - 300;
+                let height = seccion.offsetHeight;
+                let id = seccion.getAttribute('id');
 
+                if (top >= offset && top < offset + height) {
+                    linkItems.forEach(links => {
+                        if (links.classList.contains('linkActive')) {
+                            links.classList.remove('linkActive');
+                        } else {
+                            links.classList.remove('linkActive');
+                        }
 
-            //Recorremos el array de refs
-            refs.forEach((ref) => {
-                //Si el ref no existe, retornamos
-                if (!ref.current) return;
-                //Obtenemos la posición del elemento
-                const sectionTop = ref.current.offsetTop;
-                //Obtenemos la altura del elemento
-                const sectionHeight = ref.current.clientHeight;
-                //Obtenemos la posición del scroll
-                const scrollPosition = window.scrollY;
-
-                //Si la posición del scroll es mayor o igual a la posición del elemento
-                if (
-                    scrollPosition >= sectionTop - sectionHeight * 0.25 &&
-                    scrollPosition <= sectionTop + sectionHeight - sectionHeight * 0.25
-                ) {
-                    //Actualizamos el estado del link activo
-                    onSelectLink(ref.current.id);
+                        if (links.querySelector('a').getAttribute('href') === `#${id}`) {
+                            links.classList.add('linkActive');
+                        }
+                    });
                 }
-            });
+            })
         };
-    }, [inicioRef, habilidadesRef, proyectosRef, contactoRef, setActiveLink]);
+    }
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [handleScroll]);
+
+        activeSection();
+
+        return () => {
+            window.onscroll = null;
+        }
+
+
+    }, []);
 
     return (
         <ScrollContext.Provider value={{
@@ -64,10 +61,6 @@ export const ScrollProvider = ({ children }) => {
             habilidadesRef,
             proyectosRef,
             contactoRef,
-            activeLink,
-            //Métodos
-            onSelectLink,
-
         }}>
             {children}
         </ScrollContext.Provider>

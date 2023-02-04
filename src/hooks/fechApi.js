@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-const url = 'http://localhost:4000/api/github';
-
 export const fechApi = (apiUrl, defaultFilter = 'all') => {
 
     const [data, setData] = useState([]);

@@ -8,7 +8,7 @@ export const Habilidades = () => {
     const { habilidadesRef } = useContext(ScrollContext);
 
     return (
-        <section ref={habilidadesRef} id="habilidades" className={`habilidades hidden`}>
+        <section ref={habilidadesRef} id="habilidades" className={`habilidades hidden section`}>
 
             <div className='container habilidades__container'>
                 <h2 className="section__title">Habilidades</h2>

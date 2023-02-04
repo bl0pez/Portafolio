@@ -1,5 +1,9 @@
-export const CardProyect = ({ name, description, topics, image, homepage, html_url}) => {
-  return (
+export const CardProyect = ({ name, description, topics, image, homepage, html_url }) => {
+
+
+    console.log(!!!homepage, name);
+
+    return (
         <div className="proyectos__item">
             <div className="proyectos__img">
                 <img src={image} alt="proyecto" className="proyectos__img" />
@@ -11,23 +15,34 @@ export const CardProyect = ({ name, description, topics, image, homepage, html_u
                     {
                         topics.map((topic) => (
                             <span
-                                key={topic}  
+                                key={topic}
                                 className="proyectos__tag">{topic}</span>
                         ))
                     }
                 </div>
                 <div className="proyectos__links">
-                    {/* abrir en otro navegaro */}
                     <a href={image} target='_blank' rel='noreferrer' title='Ver imagen'>
                         <i className="fas fa-image"></i>
                     </a>
-                    <a href={homepage} target='_blank' rel='noreferrer' title='Ver Proyecto'>
-                        <i className="fas fa-link"></i>
+                    {
+                        !!homepage &&
+                        (
+                            <a
+                                href={homepage}
+                                className={!!homepage ? '' : 'disabled-a'}
+                                target='_blank'
+                                rel='noreferrer'
+                                title='Ver Proyecto'>
+                                <i className="fas fa-link"></i>
+                            </a>
+                        )
+                    }
+                    <a href={html_url} target='_blank' rel='noreferrer' title='Ver Repositorio'>
+                        <i className="fab fa-github"></i>
                     </a>
-                    <a href={html_url} target='_blank' rel='noreferrer' title='Ver Repositorio'><i className="fab fa-github"></i></a>
                 </div>
 
             </div>
         </div>
-  )
+    )
 }

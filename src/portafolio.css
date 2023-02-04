@@ -8,10 +8,11 @@
 /* Variables */
 :root{
     --bg-primario: #06A8D1;
-    --bg-primario-hover: #0A7E9F;
+    --bg-primario-hover: #09627b;
     --bg-secundario: #2F2D2E;
     --text-primario: #fff;
     --text-secundario: #000;
+    --text-error: #FF0000;
 }
 
 html{

@@ -73,6 +73,11 @@
     background: var(--bg-primario-hover);
 }
 
+.proyectos__links .disabled-a{
+    background: var(--bg-primario-hover);
+    cursor: not-allowed;
+}
+
 .proyectos__img{
     height: 35rem;
     max-height: 270px;
