@@ -1,8 +1,4 @@
 export const CardProyect = ({ name, description, topics, image, homepage, html_url }) => {
-
-
-    console.log(!!!homepage, name);
-
     return (
         <div className="proyectos__item">
             <div className="proyectos__img">
