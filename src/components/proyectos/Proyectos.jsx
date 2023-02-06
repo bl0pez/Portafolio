@@ -1,13 +1,23 @@
+import { useContext, useState } from 'react';
+
 import { fechApi } from '../../hooks/fechApi';
 import { CardProyect } from './CardProyect';
-import './proyectos.css';
-import { useContext } from 'react';
 import { ScrollContext } from '../../context/ScrollContext';
+import { items } from './itemFilter';
+
+import './proyectos.css';
 
 export const Proyectos = () => {
     const { proyectosRef } = useContext(ScrollContext);
+    const [active, setActive] = useState("all");
 
     const { filteredData, setFilter, loading } = fechApi(`${import.meta.env.VITE_URL_BACKEND}/portafolio`);
+
+    const handleFilter = (filter) => {
+        setFilter(filter);
+        setActive(filter);
+
+    }
 
 
     if (loading) {
@@ -23,18 +33,15 @@ export const Proyectos = () => {
             <div className="container proyectos__container">
                 <h2 className="section__title">Proyectos</h2>
                 <div className="proyecto__filter">
-                    <button
-                        onClick={() => setFilter('all')}
-                        className={`proyecto__filter-btn`}
-                    >Todos</button>
-                    <button
-                        onClick={() => setFilter('frontend')}
-                        className={`proyecto__filter-btn`}
-                    >Frontend</button>
-                    <button
-                        onClick={() => setFilter('backend')}
-                        className={`proyecto__filter-btn`}
-                    >Backend</button>
+                    {
+                        items.map((filter) => (
+                            <button 
+                                key={filter.id} 
+                                onClick={() => handleFilter(filter.filter)} 
+                                className={`proyecto__filter-btn 
+                                ${active === filter.filter && "active-filter"}`}>{filter.name}</button>
+                        ))
+                    }
                 </div>
                 <div className="proyectos__grid">
                     {

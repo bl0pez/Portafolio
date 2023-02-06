@@ -25,7 +25,7 @@ export const Header = () => {
                                 key={route.id}
                                 data-url={route.value}
                                 className="nav_item"
-                                >
+                            >
                                 <a href={`#${route.value}`} className='nav__link'>{route.name}</a>
                             </li>
 
@@ -40,9 +40,6 @@ export const Header = () => {
                     <i className="fas fa-bars"></i>
                 </button>
             </nav>
-
-
-
 
         </header>
     )

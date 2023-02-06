@@ -1,5 +1,7 @@
 import { useContext, useEffect, useMemo, useState } from 'react';
 import { ScrollContext } from '../../context/ScrollContext';
+import { postFechApi } from '../../hooks/postFechApi';
+import { useForm } from '../../hooks/useForm';
 import './contacto.css';
 
 const stateInitial = {
@@ -9,71 +11,32 @@ const stateInitial = {
 }
 
 const errorsState = {
-    nombre: '',
-    email: '',
-    mensaje: ''
+    errorNombre: '',
+    errorEmail: '',
+    errorMensaje: ''
 }
 
 export const Contacto = () => {
 
 
     const { contactoRef } = useContext(ScrollContext);
-
-    const [formValid, setFormValid] = useState(true);
-    const [state, setState] = useState(stateInitial);
-    const [errors, setErrors] = useState(errorsState);
-
-    const { nombre , email, mensaje } = state;
-    const { nombre: errorNombre, email: errorEmail, mensaje: errorMensaje } = errors;
-
-    const onChange = ({ target }) => {
-        setState({
-            ...state,
-            [target.name]: target.value
-        });
-    }
-
-    //Validar errores
-    const blurValidation = ({ target }) => {
-        if(target.value.trim() === ''){
-            setErrors({
-                ...errors,
-                [target.name]: `El campo ${target.name} es obligatorio`
-            });
-        }else{
-            setErrors({
-                ...errors,
-                [target.name]: ''
-            });
-        }
-    }
+    const { nombre, errorNombre, email, errorEmail,mensaje, errorMensaje, formValid, onChange, blurValidation} = useForm(stateInitial, errorsState);
+    const { postData, loading, msg, error } = postFechApi();
 
 
-
-        //Memorizamos los errores para que no se vuelvan a ejecutar
-        useMemo(() => {
-            if(Object.values(errors).every(error => error.trim() === '')){
-                return true;
-            }
-    
-            return false;
-    
-        },[errorNombre, errorEmail, errorMensaje]);
-
-
-        console.log(formValid);
 
     const onSubmit = (e) => {
         e.preventDefault();
 
-        if(!formValid){
+        if(formValid){
             return;
         }
        
-        console.log('Enviando formulario');
+        postData(state);
 
 
     }
+
 
     //Funcion que agrega la clase de error si el campo esta vacio
     const errorActive = (error) => error ? 'form__error--active' : '';
@@ -97,20 +60,20 @@ export const Contacto = () => {
                             name='nombre' 
                             placeholder='Nombre' />
                         {/* errror si no lo completa */}
-                        <span className={`form__error ${errorActive(errors.nombre)}`}>{ errors.nombre }</span>
+                        <span className={`form__error ${errorActive(errorNombre)}`}>{ errorNombre }</span>
                     </div>
                     <div className='form__group'>
                         <label htmlFor='email' className='form__label'>Email</label>
                         <input 
                             type='email'
-                            onChange={onChange} 
+                            onChange={(e) => onChange(e)} 
                             value={email} 
                             onBlur={blurValidation}
                             className='form__input' 
                             name='email'
                             id='email' 
                             placeholder='Email' />
-                        <span className={`form__error ${errorActive(errors.email)}`}>{ errors.email }</span>
+                        <span className={`form__error ${errorActive(errorEmail)}`}>{errorEmail }</span>
                     </div>
                     <div className='form__group'>
                         <label htmlFor='mensaje' className='form__label'>Mensaje</label>
@@ -122,7 +85,7 @@ export const Contacto = () => {
                             onBlur={blurValidation}
                             className='form__input' 
                             placeholder='Mensaje'></textarea>
-                        <span className={`form__error ${errorActive(errors.mensaje)}`}>{ errors.mensaje }</span>
+                        <span className={`form__error ${errorActive(errorMensaje)}`}>{ errorMensaje }</span>
                     </div>
                     <button 
                         className='form__button'

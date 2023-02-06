@@ -100,14 +100,17 @@
     padding: 10px 20px;
     background: var(--bg-primario);
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background  0.3s ease;
+    transition: transform 0.3s ease;
     margin: 0 10px;
     font-size: 2rem;
     color: var(--text-primario);
 }
 
-.active{
+
+.active-filter,
+.proyecto__filter-btn:hover
+{
     background: var(--bg-primario-hover);
     transform: scale(1.1);
-    color: red;
 }
