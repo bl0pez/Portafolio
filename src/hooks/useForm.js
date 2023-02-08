@@ -9,16 +9,8 @@ export const useForm = (stateInitial = {}, errorsState = {}) => {
     const [errors, setErrors] = useState(errorsState);
 
     //Inicializar el estado de los errores
-    useEffect(() => {
-        setErrors(errorsState);
-    }, [errorsState]);
-
-    useEffect(() => {
-        setState(stateInitial);
-    }, [stateInitial]);
     
     useMemo(() => {
-        
         Object.values(states).forEach((value) => {
             if(value.trim() === ''){
                 setFormValid(true);
@@ -38,19 +30,23 @@ export const useForm = (stateInitial = {}, errorsState = {}) => {
     }
 
     const blurValidation = ({ target }) => {
-        if(target.value.trim() === ''){
+
+        if(target.value.trim().length < 2){
+
+            console.log(target.value.trim());
+
             setErrors({
                 ...errors,
-                [`error${target.name}`]: `El campo ${target.name} es obligatorio`
+                [`${target.name}Error`]: `El campo ${target.name} es obligatorio`
             });
         }else{
             setErrors({
                 ...errors,
-                [`error${target.name}`]: ''
+                [`${target.name}Error`]: ''
             });
         }
     }
-
+    
     return {
         // Variables
         ...states,

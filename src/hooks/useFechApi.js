@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const fechApi = (apiUrl, defaultFilter = 'all') => {
+export const useFechApi = (apiUrl, defaultFilter = 'all') => {
 
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(defaultFilter);

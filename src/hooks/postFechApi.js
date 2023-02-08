@@ -4,7 +4,9 @@ const postFechApi = () => {
 
     const [state, setState] = useState({ msg: '', loading: false, error: null });
 
-    const postData = async (campos) => {
+    const postData = async ({ nombre, email, mensaje }) => {
+
+        console.log(nombre, email, mensaje);
 
         setState({ msg: '', loading: true, error: null });
 
@@ -12,9 +14,9 @@ const postFechApi = () => {
             const response = await fetch(`${import.meta.env.VITE_URL_BACKEND}/send-email`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    name: campos.nombre,
-                    email: campos.email,
-                    message: campos.mensaje
+                    name: nombre,
+                    email: email,
+                    message: mensaje
                 }),
                 headers: {
                     'Content-Type': 'application/json'

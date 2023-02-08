@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 
-import { fechApi } from '../../hooks/fechApi';
+import { useFechApi } from '../../hooks/useFechApi';
 import { CardProyect } from './CardProyect';
 import { ScrollContext } from '../../context/ScrollContext';
 import { items } from './itemFilter';
@@ -11,12 +11,11 @@ export const Proyectos = () => {
     const { proyectosRef } = useContext(ScrollContext);
     const [active, setActive] = useState("all");
 
-    const { filteredData, setFilter, loading } = fechApi(`${import.meta.env.VITE_URL_BACKEND}/portafolio`);
+    const { filteredData, setFilter, loading } = useFechApi(`${import.meta.env.VITE_URL_BACKEND}/portafolio`);
 
     const handleFilter = (filter) => {
         setFilter(filter);
         setActive(filter);
-
     }
 
 
