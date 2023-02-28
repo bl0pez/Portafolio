@@ -1,33 +1,49 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 const postFechApi = () => {
 
-    const [state, setState] = useState({ msg: '', loading: false, error: null });
+    // Creamos el estado
+    const [state, setState] = useState({ msg: '', loading: false, error: false});
 
-    const postData = async ({ nombre, email, mensaje }) => {
-
-        console.log(nombre, email, mensaje);
-
-        setState({ msg: '', loading: true, error: null });
+    // Funcion para enviar los datos del formulario
+    const postData = async ({ name, email, message }) => {
 
         try {
+
+            //Creamos la peticion
             const response = await fetch(`${import.meta.env.VITE_URL_BACKEND}/send-email`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    name: nombre,
+                    name,
                     email: email,
-                    message: mensaje
+                    message
                 }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
             });
+
+            if (!response.ok) {
+                setState({ msg: 'Error al enviar el formulario', loading: false, error: true });
+                window.alert('Error al enviar el formulario');
+                return;
+            }
+
+            // Obtenemos la respuesta
             const data = await response.json();
-            setState({ msg: data.msg, loading: false, error: null });
+
+            window.alert(data.msg);
+
+
+            // Mostramos el mensaje
+            setState({ msg: "Formulario enviado :)", loading: false, error: false });
+
         } catch (error) {
-            console.log(error.message);
-            setState({ msg: 'Error al enviar el formulario', loading: false, error });
+            setState({ msg: 'Error al enviar el formulario', loading: false, error: true });
+            window.alert('Error al enviar el formulario');
+
         }
+
     }
 
 

@@ -21,7 +21,7 @@ export const Contacto = () => {
 
 
     const { contactoRef } = useContext(ScrollContext);
-    const { nombre, nombreError, email, emailError, mensaje, mensajeError, formValid, onChange, blurValidation } = useForm(stateInitial, errorsState);
+    const { nombre, nombreError, email, emailError, mensaje, mensajeError, formValid, onChange, blurValidation, resetForm } = useForm(stateInitial, errorsState);
     const { postData, loading, msg, error } = postFechApi();
 
 
@@ -29,15 +29,10 @@ export const Contacto = () => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        if (formValid) {
+        if(nombre.trim().length < 2 || email.trim().length < 2 || mensaje.trim().length < 2) {
             return;
         }
 
-        postData({
-            name: nombre,
-            email: email,
-            message: mensaje
-        });
 
     }
 
@@ -53,11 +48,10 @@ export const Contacto = () => {
                 {
                     loading
                         ? <p className='section__text'>Enviando...</p>
-                        : <Form 
+                        : <Form
                         onSubmit={onSubmit}
                         onChange={onChange}
                         blurValidation={blurValidation}
-                        formValid={formValid}
                         nombre={nombre}
                         email={email}
                         mensaje={mensaje}

@@ -107,3 +107,21 @@
     outline: 1px solid var(--bg-primario-hover);
     cursor: not-allowed;
 }
+
+.form__msg--error{
+    background: #FF0000;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    font-weight: 500;
+}
+
+.form__msg--success{
+    background: #0fcd0f;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    font-weight: 500;
+}
