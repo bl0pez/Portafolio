@@ -4,6 +4,7 @@ import { postFechApi } from '../../hooks/postFechApi';
 import { useForm } from '../../hooks/useForm';
 import './contacto.css';
 import { Form } from './Form';
+import { Spinner } from './spinner';
 
 const stateInitial = {
     nombre: '',
@@ -33,6 +34,8 @@ export const Contacto = () => {
             return;
         }
 
+        postData({ name:nombre, email, message:mensaje });
+
 
     }
 
@@ -47,7 +50,7 @@ export const Contacto = () => {
                 <h2 className='section__title'>Contacto</h2>
                 {
                     loading
-                        ? <p className='section__text'>Enviando...</p>
+                        ? <Spinner />
                         : <Form
                         onSubmit={onSubmit}
                         onChange={onChange}

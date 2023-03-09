@@ -8,6 +8,8 @@ const postFechApi = () => {
     // Funcion para enviar los datos del formulario
     const postData = async ({ name, email, message }) => {
 
+        setState({ msg: '', loading: true, error: false });
+
         try {
 
             //Creamos la peticion
@@ -15,7 +17,7 @@ const postFechApi = () => {
                 method: 'POST',
                 body: JSON.stringify({
                     name,
-                    email: email,
+                    email,
                     message
                 }),
                 headers: {

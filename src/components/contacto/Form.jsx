@@ -1,3 +1,5 @@
+import ReCAPTCHA from 'react-google-recaptcha';
+
 export const Form = ({ onSubmit, onChange, blurValidation, nombre, email, mensaje, nombreError, emailError, mensajeError, errorActive }) => {
     return (
         <>
@@ -42,6 +44,10 @@ export const Form = ({ onSubmit, onChange, blurValidation, nombre, email, mensaj
                         placeholder='Mensaje'></textarea>
                     <span className={`form__error ${errorActive(mensajeError)}`}>{mensajeError}</span>
                 </div>
+                <ReCAPTCHA
+                    sitekey={import.meta.env.VITE_KEY_RECAPTCHA}
+                    onChange={onChange}
+                />
                 <button
                     className='form__button'
                 >Enviar</button>
