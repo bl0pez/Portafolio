@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ScrollContext } from '../../context/ScrollContext';
 import { data } from './data';
-import './Habilidades.css';
+import './habilidades.css';
 
 export const Habilidades = () => {
 
