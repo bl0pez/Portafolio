@@ -18,13 +18,13 @@ export const Inicio = () => {
                 </h3>
 
                 <div className="section__hero-text--redes">
-                    <a>
+                    <a src="https://github.com/bl0pez" target="_blank">
                         <i className="fab fa-github"></i>
                     </a>
-                    <a>
+                    <a src="https://www.linkedin.com/in/bryan-l%C3%B3pez-s%C3%A1nchez/" target="_blank">
                         <i className="fab fa-linkedin"></i>
                     </a>
-                    <a>
+                    <a src="https://www.tiktok.com/@blopez_dev" target="_blank">
                         <i className="fab fa-tiktok"></i>
                     </a>
                 </div>
