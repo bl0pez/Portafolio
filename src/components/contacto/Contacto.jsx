@@ -1,10 +1,12 @@
-import { useContext, useEffect, useMemo, useState } from 'react';
-import { ScrollContext } from '../../context/ScrollContext';
-import { postFechApi } from '../../hooks/postFechApi';
-import { useForm } from '../../hooks/useForm';
-import './contacto.css';
+import { useContext } from 'react';
+
 import { Form } from './Form';
+import { postFechApi } from '../../hooks/postFechApi';
+import { ScrollContext } from '../../context/ScrollContext';
 import { Spinner } from './Spinner';
+import { useForm } from '../../hooks/useForm';
+
+import './contacto.css';
 
 const stateInitial = {
     nombre: '',
