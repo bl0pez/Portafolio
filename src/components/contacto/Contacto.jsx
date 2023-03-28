@@ -4,7 +4,7 @@ import { postFechApi } from '../../hooks/postFechApi';
 import { useForm } from '../../hooks/useForm';
 import './contacto.css';
 import { Form } from './Form';
-import { Spinner } from './spinner';
+import { Spinner } from './Spinner';
 
 const stateInitial = {
     nombre: '',
