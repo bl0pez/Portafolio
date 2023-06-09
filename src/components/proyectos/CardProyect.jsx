@@ -1,8 +1,9 @@
 export const CardProyect = ({ name, description, topics, image, homepage, html_url }) => {
+
     return (
         <div className="proyectos__item">
             <div className="proyectos__img">
-                <img src={image} alt="proyecto" className="proyectos__img" />
+                <img src={image} alt={topics} className="proyectos__img" onError={(e) => { e.target.onerror = null; e.target.src = 'https://raw.githubusercontent.com/bl0pez/Portafolio-backend/master/public/assets/img/preview.webp' }} />
             </div>
             <div className="proyectos__info">
                 <h3 className="proyectos__subtitle">{name}</h3>
