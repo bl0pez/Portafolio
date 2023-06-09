@@ -23,12 +23,13 @@
     width: 100%;
 }
 
-.section__hero-text h2{
+.section__hero-text h1{
     font-size: 4rem;
     font-weight: 600;
+    margin: 0;
 }
 
-.section__hero-text h3{
+.section__hero-text h2{
     padding: 0.5rem 0;
     font-size: 2.5rem;
     font-weight: 400;

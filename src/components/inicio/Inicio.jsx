@@ -1,7 +1,9 @@
-import hero from '../../assets/img/hero/hero.svg'
-import './inicio.css'
 import { useContext } from 'react';
+
 import { ScrollContext } from '../../context/ScrollContext';
+import hero from '../../assets/img/hero/hero.svg'
+
+import './inicio.css'
 
 export const Inicio = () => {
     const { inicioRef } = useContext(ScrollContext);
@@ -10,12 +12,12 @@ export const Inicio = () => {
         <section className="container section-hero hidden section" id='inicio' ref={inicioRef}>
 
             <div className="section__hero-text">
-                <h2>Hola, soy
+                <h1>Hola, soy
                     <span className='section__hero-text--name'> Bryan </span>
+                </h1>
+                <h2>
+                    Desarrollador web fullstack
                 </h2>
-                <h3>
-                    Desarrollador web
-                </h3>
 
                 <div className="section__hero-text--redes">
                     <a href="https://github.com/bl0pez" target='_blank' rel='noreferrer' title='Ver github'>
