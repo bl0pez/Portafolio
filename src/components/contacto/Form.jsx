@@ -7,7 +7,7 @@ export const Form = ({ onSubmit, onChange, blurValidation, nombre, email, mensaj
                 onSubmit={onSubmit}
                 className='form'>
                 <div className='form__group'>
-                    <label htmlFor='name' className='form__label'>Nombre</label>
+                    <label htmlFor='nombre' className='form__label'>Nombre</label>
                     <input
                         type='text'
                         onChange={onChange}
