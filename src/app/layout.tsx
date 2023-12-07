@@ -1,8 +1,14 @@
+import type { Metadata } from 'next'
 import './globals.css'
 import { Header } from '@/components/public/ui/Header'
 import { Footer } from '@/components/public/ui/Footer'
 import Head from 'next/head';
 import { font } from './ui/fonts';
+
+export const metadata: Metadata = {
+  title: 'Bryan Lopez | Desarrollador Web Fullstack',
+  description: 'Desarrollador Web Fullstack',
+}
 
 
 
