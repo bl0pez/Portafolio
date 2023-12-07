@@ -13,17 +13,26 @@ export default function Home() {
 
           <ul className="mt-4 flex justify-center gap-6">
             <li className="border border-primary p-2 inline-block rounded-lg hover:bg-primary transition-all duration-300 hover:scale-105">
-              <a href="">
+              <a 
+                href="www.linkedin.com/in/bryan-lopez-sanchez"
+                aria-label="Linkedin"
+              >
                 <CiLinkedin size="3em" />
               </a>
             </li>
             <li className="border border-primary p-2 inline-block rounded-lg hover:bg-primary transition-all duration-300 hover:scale-105">
-              <a href="">
+              <a 
+                href="https://github.com/bl0pez"
+                aria-label="Github"  
+              >
                 <FaGithub size="3em" />
               </a>
             </li>
             <li className="border border-primary p-2 inline-block rounded-lg hover:bg-primary transition-all duration-300 hover:scale-105">
-              <a href="">
+              <a 
+                aria-label="Tiktok"
+                href="https://www.tiktok.com/@blopez_dev?lang=es"
+              >
                 <FaTiktok size="3em" />
               </a>
             </li>
