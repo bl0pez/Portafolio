@@ -6,8 +6,11 @@ import Head from 'next/head';
 import { font } from './ui/fonts';
 
 export const metadata: Metadata = {
-  title: 'Bryan Lopez | Desarrollador Web Fullstack',
-  description: 'Desarrollador Web Fullstack',
+  title: {
+    template: "%s - Portafolio", 
+    default: "Portafolio | Bryan Lopez",
+  },
+  description: "Desarrollador Web Fullstack | React, Nextjs, Nodejs, Nestjs, Express, MongoDB, Tailwindcss, Typescript, Javascript",
 }
 
 
@@ -24,7 +27,9 @@ export default function RootLayout({
       </Head>
       <body className={`${font.className} antialiased`}>
           <Header />
-          {children}
+          <main className="flex-auto flex container mx-auto items-center flex-wrap gap-2">
+            {children}
+          </main>
           <Footer />
       </body>
     </html>

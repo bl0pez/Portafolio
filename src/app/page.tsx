@@ -7,7 +7,7 @@ import { FaTiktok } from "react-icons/fa";
 export default function Home() {
 
   return (
-    <main className="flex-auto flex container mx-auto items-center flex-wrap gap-2">
+    <>
         <div className="text-center p-2 mx-auto">
           <h1 className="text-5xl font-bold">
               Hola, soy Bryan <br/><span className="text-primary text-4xl">Desarrollador web fullstack</span>
@@ -18,6 +18,7 @@ export default function Home() {
               <a 
                 href="www.linkedin.com/in/bryan-lopez-sanchez"
                 aria-label="Linkedin"
+                
               >
                 <CiLinkedin size="3em" />
               </a>
@@ -43,8 +44,7 @@ export default function Home() {
 
         <div className="p-2 mx-auto">
           <Image src="hero.svg" width={500} height={500} alt="Hero" />
-        </div>
-        
-    </main>
+        </div> 
+    </>
   )
 }
