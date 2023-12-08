@@ -11,6 +11,21 @@ export const metadata: Metadata = {
     default: "Portafolio | Bryan Lopez",
   },
   description: "Desarrollador Web Fullstack | React, Nextjs, Nodejs, Nestjs, Express, MongoDB, Tailwindcss, Typescript, Javascript",
+  authors: [{ name: "Bryan Lopez", url: "https://blopez.cl/" }],
+  keywords: ["Bryan Lopez", "Desarrollador Web", "Fullstack", "React", "Nextjs", "Nodejs", "Nestjs", "Express", "MongoDB", "Tailwindcss", "Typescript", "Javascript"],
+  openGraph: {
+    type: "website",
+    locale: "es_CL",
+    url: "https://blopez.cl/",
+    images: [
+      {
+        url: "https://blopez.cl/opengraph-image.png",
+        width: 500,
+        height: 500,
+        alt: "Bryan Lopez",
+      },
+    ],
+  }
 }
 
 
