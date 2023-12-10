@@ -1,13 +1,11 @@
-import { Metadata } from "next";
 import Image from "next/image";
 import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 
 export default function Home() {
-
   return (
-    <>
+    <main className="flex container mx-auto items-center flex-wrap gap-2">
         <div className="text-center p-2 mx-auto">
           <h1 className="text-5xl font-bold">
               Hola, soy Bryan <br/><span className="text-primary text-4xl">Desarrollador web fullstack</span>
@@ -45,6 +43,6 @@ export default function Home() {
         <div className="p-2 mx-auto">
           <Image src="hero.svg" width={500} height={500} alt="Hero" />
         </div> 
-    </>
+    </main>
   )
 }

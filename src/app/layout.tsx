@@ -7,22 +7,24 @@ import { font } from './ui/fonts';
 
 export const metadata: Metadata = {
   title: {
-    template: "%s - Portafolio", 
-    default: "Portafolio | Bryan Lopez",
+    template: "%s - Bryan Lopez | Desarrollador Web Fullstack",
+    default: "Bryan Lopez - Portafolio de Desarrollador Web Fullstack"
   },
-  description: "Desarrollador Web Fullstack | React, Nextjs, Nodejs, Nestjs, Express, MongoDB, Tailwindcss, Typescript, Javascript",
+  description: "Bryan Lopez, Desarrollador Web Fullstack especializado en React, Next.js, Node.js, Nest.js, Express, MongoDB, Tailwind CSS, TypeScript y JavaScript. Descubre mis proyectos y habilidades en mi portafolio.",
   authors: [{ name: "Bryan Lopez", url: "https://blopez.cl/" }],
-  keywords: ["Bryan Lopez", "Desarrollador Web", "Fullstack", "React", "Nextjs", "Nodejs", "Nestjs", "Express", "MongoDB", "Tailwindcss", "Typescript", "Javascript"],
+  keywords: ["Bryan Lopez", "Desarrollador Web", "Fullstack", "React", "Next.js", "Node.js", "Nest.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript", "JavaScript", "Portafolio"],
   openGraph: {
     type: "website",
     locale: "es_CL",
     url: "https://blopez.cl/",
+    title: "Bryan Lopez - Portafolio de Desarrollador Web Fullstack",
+    description: "Bryan Lopez, Desarrollador Web Fullstack especializado en React, Next.js, Node.js, Nest.js, Express, MongoDB, Tailwind CSS, TypeScript y JavaScript. Descubre mis proyectos y habilidades en mi portafolio.",
     images: [
       {
         url: "https://blopez.cl/opengraph-image.png",
-        width: 500,
-        height: 500,
-        alt: "Bryan Lopez",
+        width: 1200,
+        height: 630,
+        alt: "Logo de Bryan Lopez",
       },
     ],
   }
@@ -42,9 +44,7 @@ export default function RootLayout({
       </Head>
       <body className={`${font.className} antialiased`}>
           <Header />
-          <main className="flex-auto flex container mx-auto items-center flex-wrap gap-2">
             {children}
-          </main>
           <Footer />
       </body>
     </html>

@@ -77,7 +77,8 @@ export const Header = () => {
                     {
                         routes.map((routes) => (
                             <li key={routes.name}>
-                                <Link 
+                                <Link
+                                    onClick={() => setIsMenuOpen(false)} 
                                     className={`px-5 py-2 rounded-md text-4xl hover:bg-primary transition-background duration-200  md:text-lg ${pathname === routes.path && 'active'}`} href={routes.path}
                                     aria-label={routes.ariaLabel}
                                     >{routes.name}</Link>

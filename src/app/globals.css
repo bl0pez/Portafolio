@@ -6,6 +6,10 @@ body {
   @apply bg-secondary min-h-screen text-white flex flex-col;
 }
 
+main {
+  @apply flex-1 p-2;
+}
+
 .active {
   @apply bg-primary;
 }
