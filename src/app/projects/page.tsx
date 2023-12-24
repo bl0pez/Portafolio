@@ -1,3 +1,4 @@
+import { Cards } from "@/components/projects/Cards";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,7 +8,12 @@ export const metadata: Metadata = {
 
 const Projects = () => {
   return (
-    <div>Projects</div>
+    <section>
+      <h1 className="text-5xl font-bold text-center py-4">Proyectos</h1>
+
+      <Cards />
+
+    </section>
   )
 }
 

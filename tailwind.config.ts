@@ -11,7 +11,8 @@ const config: Config = {
       colors: {
         primary: "#06A8D1",
         primaryHover: "#09627b",
-        secondary: "#2F2D2E",
+        secondary: "#38296C",
+        body: "#1C1242",
       },
       transitionProperty: {
         background: "background-color",

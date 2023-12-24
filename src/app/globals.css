@@ -2,12 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-secondary min-h-screen text-white flex flex-col;
-}
 
-main {
-  @apply flex-1 p-2;
+@layer base {
+  body {
+    @apply bg-body text-white;
+  }
+  section {
+    @apply flex-1 container mx-auto px-1 md:p-3;
+  }
+
 }
 
 .active {

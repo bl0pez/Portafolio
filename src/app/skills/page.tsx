@@ -1,4 +1,5 @@
 import { SvgContent } from "@/components/common/icons";
+import Pug from "@/components/icons/Pug";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,6 +23,10 @@ const Skills = () => {
             )
           }
       </div>
+
+      <Pug
+        className="w-10 h-10"
+      />
 
 
     </main>

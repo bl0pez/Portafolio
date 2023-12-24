@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Header } from '@/components/public/ui/Header'
 import { Footer } from '@/components/public/ui/Footer'
-import Head from 'next/head';
 import { font } from './ui/fonts';
 
 export const metadata: Metadata = {
@@ -39,13 +38,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <Head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
-      </Head>
       <body className={`${font.className} antialiased`}>
+          <main className='min-h-screen flex flex-col'>
           <Header />
-            {children}
+              {children}
           <Footer />
+          </main>
       </body>
     </html>
   )
