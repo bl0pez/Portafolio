@@ -35,7 +35,7 @@ const Hero = () => {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.2 }}
-          className="text-lg"
+          className="text-lg tracking-wider"
         >
           Apasionado por la creación digital y la transformación de ideas en
           experiencias interactivas. La magia de ver cómo el código cobra vida
@@ -68,7 +68,7 @@ const Hero = () => {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.1 }}
-        className="flex-1 flex justify-center"
+        className="flex-1 md:flex justify-center hidden"
       >
         <Image src="/hero.svg" alt="hero" width={500} height={500} />
       </motion.div>
