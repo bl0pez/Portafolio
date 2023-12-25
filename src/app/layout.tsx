@@ -1,50 +1,42 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import { Header } from '@/components/public/ui/Header'
-import { Footer } from '@/components/public/ui/Footer'
-import { font } from './ui/fonts';
+import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/header/Header";
+
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s - Bryan Lopez | Desarrollador Web Fullstack",
-    default: "Bryan Lopez - Portafolio de Desarrollador Web Fullstack"
-  },
-  description: "Bryan Lopez, Desarrollador Web Fullstack especializado en React, Next.js, Node.js, Nest.js, Express, MongoDB, Tailwind CSS, TypeScript y JavaScript. Descubre mis proyectos y habilidades en mi portafolio.",
-  authors: [{ name: "Bryan Lopez", url: "https://blopez.cl/" }],
-  keywords: ["Bryan Lopez", "Desarrollador Web", "Fullstack", "React", "Next.js", "Node.js", "Nest.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript", "JavaScript", "Portafolio"],
-  openGraph: {
-    type: "website",
-    locale: "es_CL",
-    url: "https://blopez.cl/",
-    title: "Bryan Lopez - Portafolio de Desarrollador Web Fullstack",
-    description: "Bryan Lopez, Desarrollador Web Fullstack especializado en React, Next.js, Node.js, Nest.js, Express, MongoDB, Tailwind CSS, TypeScript y JavaScript. Descubre mis proyectos y habilidades en mi portafolio.",
-    images: [
-      {
-        url: "https://blopez.cl/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Logo de Bryan Lopez",
-      },
-    ],
-  }
-}
-
-
+  title: "Protafolio - Bryan Lopez S",
+  description:
+    "Bryan Lopez, Desarrollador Web Fullstack especializado en React, Next.js, Node.js, Nest.js, Express, MongoDB, Tailwind CSS, TypeScript y JavaScript. Descubre mis proyectos y habilidades en mi portafolio.",
+  keywords: [
+    "Junior Fullstack Web Developer",
+    "Bryan Lopez",
+    "Desarrollador Web",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Nest.js",
+    "Express",
+    "MongoDB",
+    "Tailwind CSS",
+    "TypeScript",
+    "JavaScript",
+    "Portafolio",
+  ],
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
-      <body className={`${font.className} antialiased`}>
-          <main className='min-h-screen flex flex-col'>
-          <Header />
-              {children}
-          <Footer />
-          </main>
+    <html lang="en">
+      <body className={montserrat.className}>
+        <Header />
+        {children}
       </body>
     </html>
-  )
+  );
 }
