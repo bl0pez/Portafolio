@@ -10,6 +10,6 @@
     @apply bg-body text-white min-h-screen;
   }
   section {
-    @apply container mx-auto py-40 pb-32 min-h-screen;
+    @apply container mx-auto py-10 px-2 lg:px-0 min-h-screen;
   }
 }

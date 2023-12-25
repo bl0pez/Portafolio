@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 const Hero = () => {
   return (
     <section id="home" className="grid grid-cols-1 md:grid-cols-2 items-center">
-      <div className="flex flex-col gap-3 flex-1">
+      <div className="flex flex-col gap-3 flex-1 text-center md:text-left">
         <div>
           <motion.h2
             variants={fadeIn("down", 0.1)}
@@ -47,7 +47,7 @@ const Hero = () => {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.2 }}
-          className="flex gap-4"
+          className="flex gap-4 justify-center md:justify-start"
         >
           <a
             href="#"
