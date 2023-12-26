@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply bg-body text-white max-w-[1200px] mx-auto;
   }
   section {
-    @apply container mx-auto py-10 px-2 min-h-screen;
+    @apply container mx-auto px-2 min-h-screen scroll-mt-24 w-full;
   }
 }

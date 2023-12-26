@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import NavButton from "@/components/button/NavButton";
 import { fadeIn } from "@/utils/animation";
 import { menus } from "@/utils/menu";
-import { Link as ScrollLink } from "react-scroll";
 
 const NavbarMovide = () => {
   const [toggle, setToggle] = useState(false);
@@ -31,17 +30,12 @@ const NavbarMovide = () => {
               whileInView={"show"}
               viewport={{ once: false, amount: 0.2 }}
             >
-              <ScrollLink
-                to={menu.path}
-                spy={true}
-                smooth={true}
-                offset={menu.offset}
-                duration={500}
-                activeClass="text-primary"
+              <a
+                href={menu.path}
                 onClick={() => setToggle(false)}
               >
                 {menu.name}
-              </ScrollLink>
+              </a>
             </motion.div>
           ))}
         </div>
