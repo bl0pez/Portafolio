@@ -23,6 +23,7 @@ interface props {
 const NavButton = ({ toggle, onToggle }: props) => {
   return (
     <motion.button
+      title="menu"
       animate={toggle ? "open" : "closed"}
       className="p-2 relative z-30 flex justify-center items-center"
       onClick={onToggle}
@@ -55,30 +56,3 @@ const NavButton = ({ toggle, onToggle }: props) => {
 };
 
 export default NavButton;
-
-{
-  /* <svg viewBox="0 0 23 23" className="w-9 h-9">
-  <Path
-    initial="closed"
-    variants={{
-      closed: { d: "M 2 2.5 L 20 2.5" },
-      open: { d: "M 2 16.5 L 20 2.5" },
-    }}
-  />
-  <Path
-    initial="closed"
-    variants={{
-      closed: { opacity: 1 },
-      open: { opacity: 0 },
-    }}
-    d="M 2 9.423 L 20 9.423"
-  />
-  <Path
-    initial="closed"
-    variants={{
-      closed: { d: "M 2 16.346 L 20 16.346" },
-      open: { d: "M 2 2.5 L 20 16.346" },
-    }}
-  />
-</svg>; */
-}
