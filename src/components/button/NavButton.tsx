@@ -24,7 +24,7 @@ const NavButton = ({ toggle, onToggle }: props) => {
   return (
     <motion.button
       animate={toggle ? "open" : "closed"}
-      className="p-2 relative z-30"
+      className="p-2 relative z-30 flex justify-center items-center"
       onClick={onToggle}
     >
       <svg viewBox="0 0 23 23" className="w-9 h-9">
