@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-body text-white;
+    @apply bg-body text-white max-w-[1200px] mx-auto;
   }
   section {
     @apply container mx-auto py-10 px-2 min-h-screen;

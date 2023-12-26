@@ -1,17 +1,14 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 import NavButton from "@/components/button/NavButton";
 import { fadeIn } from "@/utils/animation";
 import { menus } from "@/utils/menu";
-import { usePathname } from "next/navigation";
 import { Link as ScrollLink } from "react-scroll";
 
 const NavbarMovide = () => {
   const [toggle, setToggle] = useState(false);
-  const pathName = usePathname();
 
   return (
     <nav className="md:hidden">

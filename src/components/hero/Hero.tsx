@@ -45,7 +45,7 @@ const Hero = () => {
         </div>
       </div>
       <div
-        className="flex-1 md:flex justify-center hidden"
+        className="flex-1 md:flex justify-end hidden"
       >
         <Image src="/hero.svg" alt="hero" width={500} height={500} />
       </div>
