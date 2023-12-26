@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section id="home" className="grid grid-cols-1 md:grid-cols-2 items-center">
       <Animation 
-      direction="down"
+      animation={{ direction: "left", delay: 0.2 }}
       className="flex flex-col gap-3 flex-1 text-center md:text-left">
         <div>
           <h2
@@ -48,7 +48,7 @@ const Hero = () => {
         </div>
       </Animation>
       <Animation
-        direction="up"
+        animation={{ direction: "right", delay: 0.2 }}
         className="flex-1 md:flex justify-end items-center hidden"
       >
         <Image src="/hero.svg" alt="hero" width={500} height={500} />

@@ -1,9 +1,15 @@
-import React from "react";
+import { Animation } from "../animation/Animation";
 
 const Projects = () => {
   return (
     <section id="projects" className="">
-      <h2>Projectos</h2>
+      <Animation
+        animation={{ direction: "left", delay: 0.2 }}
+      >
+        <h1 className="text-primary text-5xl font-serif">
+          Projectos
+        </h1>
+      </Animation>
     </section>
   );
 };
