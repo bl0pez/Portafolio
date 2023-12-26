@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Animation } from "../animation/animation";
 
 const Hero = () => {
   return (
     <section id="home" className="grid grid-cols-1 md:grid-cols-2 items-center">
-      <div className="flex flex-col gap-3 flex-1 text-center md:text-left">
+      <Animation className="flex flex-col gap-3 flex-1 text-center md:text-left">
         <div>
           <h2
             className="text-3xl"
@@ -43,7 +44,7 @@ const Hero = () => {
             <FaGithub size={40} />
           </a>
         </div>
-      </div>
+      </Animation>
       <div
         className="flex-1 md:flex justify-end items-center hidden"
       >
