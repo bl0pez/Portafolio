@@ -1,17 +1,22 @@
+"use client";
+import { useObserver } from "@/hooks/useObserver";
 import { menus } from "@/utils/menu";
 
 const Navbar = () => {
+
+  const { currentSection, scrollToSection } = useObserver();
+
   return (
     <nav className="hidden md:flex gap-2 items-center">
       {menus.map((menu) => {
         return (
-          <a
+          <button
             key={menu.path}
-            href={menu.path}
-            className={`cursor-pointer rounded-full px-3 py-1.5 transition-all text-lg font-medium hover:opacity-50`}
+            onClick={() => scrollToSection(menu.path)}
+            className={`cursor-pointer px-3 py-1.5 transition-all text-lg font-medium hover:opacity-50 ${currentSection === menu.path && 'text-primary'}`}
           >
             {menu.name}
-          </a>
+          </button>
         );
       })}
     </nav>

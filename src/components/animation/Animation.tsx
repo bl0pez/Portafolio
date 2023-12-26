@@ -16,7 +16,7 @@ export const Animation = ({ children, className, animation }: Props) => {
         variants={fadeIn(animation.direction, animation.delay)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.4 }}
       >
         {children}
       </motion.div>

@@ -5,9 +5,16 @@ import { motion } from "framer-motion";
 import NavButton from "@/components/button/NavButton";
 import { fadeIn } from "@/utils/animation";
 import { menus } from "@/utils/menu";
+import { useObserver } from "@/hooks/useObserver";
 
 const NavbarMovide = () => {
   const [toggle, setToggle] = useState(false);
+  const { currentSection, scrollToSection } = useObserver();
+
+  const handleToggle = (path: string) => {
+    setToggle(false);
+    scrollToSection(path);
+  };
 
   return (
     <nav className="md:hidden">
@@ -30,12 +37,7 @@ const NavbarMovide = () => {
               whileInView={"show"}
               viewport={{ once: false, amount: 0.2 }}
             >
-              <a
-                href={menu.path}
-                onClick={() => setToggle(false)}
-              >
-                {menu.name}
-              </a>
+              <button onClick={() => handleToggle(menu.path)} className={`${currentSection === menu.path && 'text-primary'}`}>{menu.name}</button>
             </motion.div>
           ))}
         </div>
