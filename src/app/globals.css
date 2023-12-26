@@ -10,7 +10,7 @@
     @apply bg-body text-white max-w-[1200px] mx-auto;
   }
   section {
-    @apply container mx-auto px-2 min-h-screen scroll-mt-24 w-full;
+    @apply container mx-auto px-2 min-h-screen scroll-mt-20 w-full;
   }
   input {
     @apply p-4 text-lg outline-none bg-blue-950 rounded w-full;
