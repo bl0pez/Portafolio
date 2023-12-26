@@ -13,8 +13,8 @@ const Projects = () => {
 
       <Animation 
       animation={{ direction: "up", delay: 0.2 }}
-      className="flex gap-4">
-      <button className="btn">
+      className="grid gap-4 grid-cols-2 md:grid-cols-3">
+      <button className="btn col-span-2 md:col-span-1 w-full block md:inline-block">
         All
       </button>
       <button className="btn">
