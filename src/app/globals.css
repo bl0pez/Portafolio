@@ -13,7 +13,7 @@
     @apply container mx-auto px-2 min-h-screen scroll-mt-24 w-full;
   }
   input {
-    @apply p-4 text-lg outline-none bg-nav rounded w-full;
+    @apply p-4 text-lg outline-none bg-blue-950 rounded w-full;
   }
   .btn {
     @apply bg-primary rounded-sm text-lg px-3 py-1 w-32 overflow-hidden block hover:bg-primaryHover transition-all duration-300;

@@ -35,12 +35,18 @@ const Hero = () => {
         >
           <a
             href="https://www.linkedin.com/in/bryan-lopez-sanchez/"
+            aria-label="Linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-secondary p-1 rounded border hover:bg-primary transition-all duration-300"
           >
             <FaLinkedin size={40} />
           </a>
           <a
             href="https://github.com/bl0pez"
+            aria-label="Github"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-secondary p-1 rounded border hover:bg-primary transition-all duration-300"
           >
             <FaGithub size={40} />
