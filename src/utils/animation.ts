@@ -1,4 +1,4 @@
-type Direction = "up" | "down" | "left" | "right";
+export type Direction = "up" | "down" | "left" | "right";
 
 interface FadeIn {
   direction: Direction;
@@ -10,7 +10,7 @@ export const fadeIn = (direction: Direction, delay: number) => {
   return {
     hidden: {
       opacity: 0,
-      y: direction === 'up' ? 80 : direction === 'down' ? -80 : 0,
+      y: direction === "up" ? 80 : direction === "down" ? -80 : 0,
       x: direction === "left" ? 10 : direction === "right" ? -10 : 0,
       transition: {
         type: "tween",

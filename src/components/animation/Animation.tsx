@@ -1,21 +1,21 @@
 "use client";
-import { fadeIn } from "@/utils/animation";
+import { Direction, fadeIn } from "@/utils/animation";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
   children: React.ReactNode;
   className?: string;
+  direction: Direction;
 }
 
-export const Animation = ({ children, className }: Props) => {
+export const Animation = ({ children, className, direction }: Props) => {
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       <motion.div
         className={className}
-        variants={fadeIn("down", 0.2)}
+        variants={fadeIn(direction, 0.2)}
         initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.4 }}
+        animate="show"
       >
         {children}
       </motion.div>

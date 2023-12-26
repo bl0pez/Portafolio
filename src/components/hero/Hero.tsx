@@ -1,11 +1,13 @@
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Animation } from "../animation/animation";
+import { Animation } from "../animation/Animation";
 
 const Hero = () => {
   return (
     <section id="home" className="grid grid-cols-1 md:grid-cols-2 items-center">
-      <Animation className="flex flex-col gap-3 flex-1 text-center md:text-left">
+      <Animation 
+      direction="down"
+      className="flex flex-col gap-3 flex-1 text-center md:text-left">
         <div>
           <h2
             className="text-3xl"
@@ -45,11 +47,12 @@ const Hero = () => {
           </a>
         </div>
       </Animation>
-      <div
+      <Animation
+        direction="up"
         className="flex-1 md:flex justify-end items-center hidden"
       >
         <Image src="/hero.svg" alt="hero" width={500} height={500} />
-      </div>
+      </Animation>
     </section>
   );
 };
