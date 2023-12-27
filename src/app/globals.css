@@ -10,12 +10,12 @@
     @apply bg-body text-white max-w-[1200px] mx-auto;
   }
   section {
-    @apply container mx-auto px-2 min-h-screen scroll-mt-20 w-full;
+    @apply container mx-auto px-2 scroll-mt-20 w-full min-h-screen;
   }
   input {
-    @apply p-4 text-lg outline-none bg-blue-950 rounded w-full;
+    @apply p-4 text-lg outline-none rounded w-full border border-primary bg-transparent;
   }
   .btn {
-    @apply bg-primary rounded-sm text-lg px-3 py-1 w-32 overflow-hidden block hover:bg-primaryHover transition-all duration-300;
+    @apply bg-primary rounded-sm text-lg px-3 py-1 w-32 overflow-hidden block hover:bg-primary/90 transition-all duration-300;
   }
 }

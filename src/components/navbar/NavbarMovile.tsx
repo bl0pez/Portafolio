@@ -24,7 +24,7 @@ const NavbarMovide = () => {
         initial={{ x: "100%" }} // Estado inicial: completamente a la derecha
         animate={{ x: toggle ? "0" : "100%" }} // Estado final: depende del estado de 'toggle'
         transition={{ duration: 0.5 }} // Duración de la transición: medio segundo
-        className={`bg-nav fixed z-20 w-full top-0 h-screen transition-all duration-500 ${
+        className={`bg-body fixed z-20 w-full top-0 h-screen transition-all duration-500 ${
           toggle ? "right-0" : "-right-full"
         }`}
       >
@@ -37,7 +37,12 @@ const NavbarMovide = () => {
               whileInView={"show"}
               viewport={{ once: false, amount: 0.2 }}
             >
-              <button onClick={() => handleToggle(menu.path)} className={`${currentSection === menu.path && 'text-primary'}`}>{menu.name}</button>
+              <button
+                onClick={() => handleToggle(menu.path)}
+                className={`${currentSection === menu.path && "text-primary"}`}
+              >
+                {menu.name}
+              </button>
             </motion.div>
           ))}
         </div>
