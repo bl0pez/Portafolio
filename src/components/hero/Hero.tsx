@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Animation } from "../animation/Animation";
 import { redes } from "@/utils/redes";
 
