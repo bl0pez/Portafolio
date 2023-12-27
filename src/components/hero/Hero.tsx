@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Animation } from "../animation/Animation";
+import { redes } from "@/utils/redes";
 
 const Hero = () => {
   return (
@@ -23,25 +24,19 @@ const Hero = () => {
           para construir aplicaciones y sitios web sorprendentes me deja
           maravillado constantemente.
         </p>
-        <div className="flex gap-4 justify-center md:justify-start">
-          <a
-            href="https://www.linkedin.com/in/bryan-lopez-sanchez/"
-            aria-label="Linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" p-1 rounded border hover:bg-primary transition-all duration-300"
-          >
-            <FaLinkedin size={40} />
-          </a>
-          <a
-            href="https://github.com/bl0pez"
-            aria-label="Github"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" p-1 rounded border hover:bg-primary transition-all duration-300"
-          >
-            <FaGithub size={40} />
-          </a>
+        <div className="flex gap-4 justify-center md:justify-start flex-wrap">
+          {redes.map((item) => (
+            <a
+              key={item.nombre}
+              href={item.url}
+              aria-label={item.nombre}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-2 items-center justify-center hover:bg-primary border border-secondary p-2 py-1 rounded transition-colors duration-300"
+            >
+              {item.icon} {item.nombre}
+            </a>
+          ))}
         </div>
       </Animation>
       <Animation

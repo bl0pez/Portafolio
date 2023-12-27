@@ -6,7 +6,7 @@ import Header from "@/components/header/Header";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Protafolio - Bryan Lopez S",
+  title: "Protafolio de Bryan Lopez S - Desarrollador y Programador Web",
   description:
     "Bryan Lopez, Desarrollador Web Fullstack especializado en React, Next.js, Node.js, Nest.js, Express, MongoDB, Tailwind CSS, TypeScript y JavaScript. Descubre mis proyectos y habilidades en mi portafolio.",
   keywords: [
