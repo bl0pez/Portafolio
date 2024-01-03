@@ -12,10 +12,10 @@ export const ProjectItem = ({ project, delay }: Props) => {
   return (
     <Animation
       animation={{ direction: "up", delay: 0.2 + delay / 10 }}
-      className="flex flex-col w-[300px] bg-card rounded shadow shadow-white"
+      className="flex flex-col bg-card rounded shadow shadow-white"
     >
-      <div className="relative">
-        <Image src={project.img} alt={project.title} width={300} height={250} />
+      <div className="relative h-[170px] overflow-hidden">
+        <Image src={project.img} alt={project.title} width={320} height={170}  style={{width: '100%', height: '100%'}}/>
         <span className="absolute bg-card px-2 py-1 text-sm -bottom-1 text-center rounded-tr">
           {project.type}
         </span>
@@ -38,7 +38,7 @@ export const ProjectItem = ({ project, delay }: Props) => {
             rel="noopener noreferrer"
             href={project.github}
             aria-label="GitHub"
-            className="flex items-center gap-1 border px-2 py-1 hover:bg-primary"
+            className="flex items-center gap-1 border px-2 py-1 hover:bg-primary transition-colors duration-500"
           >
             <FaGithub />
             GuitHub
@@ -49,7 +49,7 @@ export const ProjectItem = ({ project, delay }: Props) => {
               rel="noopener noreferrer"
               href={project.github}
               aria-label="Demo"
-              className="flex items-center gap-1 border px-2 py-1 hover:bg-primary"
+              className="flex items-center gap-1 border px-2 py-1 hover:bg-primary transition-colors duration-500"
             >
               <FaCode />
               Demo
