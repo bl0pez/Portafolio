@@ -44,4 +44,14 @@ export const projects: Project[] = [
     img: "https://res.cloudinary.com/dohtmcdvi/image/upload/f_auto,q_auto/v1/portafolio/tox0swh29zelkssm4w20",
     technologies: ["React", "TypeScript", "Material UI"],
   },
+  {
+    title: "GifApp",
+    description:
+      "Aplicación que permite buscar y mostrar gifs animados, consumiendo la API de Giphy",
+    type: "Frontend",
+    github: "https://github.com/bl0pez/gifApp",
+    demo: "https://bl0pez.github.io/gifApp/",
+    img: "https://res.cloudinary.com/dohtmcdvi/image/upload/f_auto,q_auto/v1/portafolio/v2kmvsxjnxzj9xlg18xs",
+    technologies: ["React", "JavaScript"],
+  },
 ];
