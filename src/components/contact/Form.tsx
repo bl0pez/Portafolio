@@ -30,6 +30,9 @@ export const Form = () => {
 
       if (!res.ok) throw new Error(await res.json().then((e) => e.message));
       toast.success("Mensaje enviado correctamente");
+      setName("");
+      setEmail("");
+      setMessage("");
     } catch (error: any) {
       toast.error(error.message);
     } finally {
