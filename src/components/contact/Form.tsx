@@ -69,6 +69,10 @@ export const Form = () => {
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
         <button
+          type="submit"
+          aria-label="Enviar mensaje"
+          title="Enviar mensaje"
+          id="submit"
           disabled={isLoading}
           className={`flex justify-center items-center gap-2 btn w-full bg-primary px-3 py-3 rounded hover:bg-primaryHover transition-colors duration-500 ${
             isLoading && "opacity-50 cursor-not-allowed"
